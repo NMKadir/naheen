@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naheen Mohd. Kadir — CV</title>
-<meta name="description" content="Naheen Mohd. Kadir — Computational science researcher working on quantum cryptography, reservoir computing, and HPC/GPU numerical methods.">
+<meta name="description" content="Naheen Mohd. Kadir — Computational science researcher working on quantum computing, high-performance parallel computing (OpenMP, MPI, CUDA), machine learning, and data-driven nonlinear dynamical systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -77,6 +77,22 @@
     color:var(--muted);
     max-width:52ch;
     margin:0 0 26px;
+  }
+  .focus-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:0 0 22px;
+  }
+  .focus-chip{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.01em;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    background:var(--accent-dim);
+    border-radius:20px;
+    padding:5px 13px;
   }
   .contact-row{
     display:flex;
@@ -255,10 +271,16 @@
       <div class="hero-text">
         <p class="eyebrow">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2" fill="currentColor"/><circle cx="2" cy="2" r="1.4" fill="currentColor"/><circle cx="12" cy="2" r="1.4" fill="currentColor"/><circle cx="2" cy="12" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><path d="M2 2L7 7M12 2L7 7M2 12L7 7M12 12L7 7" stroke="currentColor" stroke-width="0.8"/></svg>
-          Computational Science &amp; Applied Mathematics
+          Computer Engineering &amp; Computational Science
         </p>
         <h1 class="name">Naheen Mohd.<br>Kadir</h1>
-        <p class="tagline">Researcher working across quantum cryptography, reservoir computing, and GPU-accelerated numerical methods — with a builder's background in shipping real software.</p>
+        <p class="tagline">Computational science researcher working on quantum computing, high-performance parallel computing (OpenMP, MPI, CUDA), machine learning, and data-driven nonlinear dynamical systems — grounded in a computer engineering background.</p>
+        <div class="focus-row">
+          <span class="focus-chip">Quantum Computing</span>
+          <span class="focus-chip">HPC — OpenMP / MPI / CUDA</span>
+          <span class="focus-chip">Machine Learning</span>
+          <span class="focus-chip">Nonlinear Dynamical Systems</span>
+        </div>
         <div class="contact-row">
           <span>Dhaka, Bangladesh</span>
           <span class="dot-sep">·</span>
