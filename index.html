@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naheen Mohd. Kadir — CV</title>
+<meta name="description" content="Naheen Mohd. Kadir — Computational science researcher working on quantum cryptography, reservoir computing, and HPC/GPU numerical methods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F6;
+    --paper-dim:#F2F0EA;
+    --ink:#14181F;
+    --muted:#5B6472;
+    --line:#E1DFD8;
+    --accent:#3454D1;
+    --accent-dim:#EAEEFB;
+    --teal:#177E75;
+    --max:800px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    padding:88px 0 56px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:32px;
+  }
+  .hero-text{flex:1;min-width:0;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow svg{flex-shrink:0;}
+  h1.name{
+    font-family:'Fraunces',serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.02;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+  .tagline{
+    font-size:17.5px;
+    color:var(--muted);
+    max-width:52ch;
+    margin:0 0 26px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 14px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+  }
+  .contact-row a, .contact-row span{
+    color:var(--ink);
+    border-bottom:none;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .contact-row a{color:var(--accent);}
+  .contact-row a:hover{border-bottom:1px solid var(--accent);}
+  .dot-sep{color:var(--line);}
+
+  .portrait{
+    width:132px;height:132px;flex-shrink:0;
+    border-radius:6px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--paper-dim);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(28%);}
+
+  /* ---------- Nav dots ---------- */
+  nav.toc{
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0;
+    background:rgba(250,249,246,.92);
+    backdrop-filter:blur(6px);
+    z-index:10;
+  }
+  nav.toc .wrap{
+    display:flex; flex-wrap:wrap; gap:4px 22px;
+    font-family:'JetBrains Mono',monospace; font-size:12.5px;
+  }
+  nav.toc a{color:var(--muted); border-bottom:none;}
+  nav.toc a:hover{color:var(--accent);}
+
+  /* ---------- Sections ---------- */
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:28px;
+  }
+  .sec-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px; color:var(--accent);
+  }
+  h2{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:26px;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:20px 24px;
+    margin-bottom:30px;
+  }
+  .entry:last-child{margin-bottom:0;}
+  .entry-date{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    padding-top:3px;
+  }
+  .entry-title{font-weight:600;font-size:16.5px;margin:0 0 2px;}
+  .entry-org{color:var(--accent);font-size:14.5px;margin:0 0 2px;font-weight:500;}
+  .entry-loc{color:var(--muted);font-size:13.5px;margin:0 0 10px;}
+  .entry p, .entry ul{margin:0;color:var(--ink);font-size:15px;}
+  .entry ul{padding-left:18px;margin-top:6px;}
+  .entry li{margin-bottom:4px;}
+  .entry-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+    margin-top:8px;
+  }
+
+  /* Thesis signature block */
+  .thesis-box{
+    border:1px solid var(--line);
+    background:var(--paper-dim);
+    border-radius:8px;
+    padding:28px 26px;
+    position:relative;
+    overflow:hidden;
+  }
+  .thesis-box .net{position:absolute; right:-30px; top:-30px; opacity:.5;}
+  .thesis-title{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:20px;
+    margin:0 0 10px;
+    max-width:34ch;
+  }
+  .thesis-box p{margin:0 0 12px;color:var(--muted);font-size:15px;max-width:62ch;}
+  .thesis-link{font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+
+  .pub{
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .pub:first-of-type{border-top:none;padding-top:0;}
+  .pub-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px; color:var(--teal);
+    border:1px solid var(--teal);
+    border-radius:3px;
+    padding:1px 5px;
+    margin-right:8px;
+  }
+  .pub-title{font-weight:600;font-size:15.5px;}
+  .pub-meta{color:var(--muted);font-size:13.5px;margin-top:4px;}
+
+  .proj-group{margin-bottom:30px;}
+  .proj-group:last-child{margin-bottom:0;}
+  .proj-group-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--accent); margin-bottom:14px;
+  }
+  .proj{margin-bottom:18px;}
+  .proj:last-child{margin-bottom:0;}
+  .proj-title{font-weight:600;font-size:15.5px;margin:0 0 4px;}
+  .proj p{margin:0 0 6px;font-size:14.5px;color:var(--ink);}
+  .proj-tools{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
+
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .skill-cat{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:4px 12px;
+    color:var(--ink);
+  }
+
+  .misc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .misc-item{font-size:14.5px;}
+  .misc-item strong{display:block;font-family:'JetBrains Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500;margin-bottom:4px;}
+
+  footer{
+    padding:36px 0 60px;
+    text-align:center;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+  }
+
+  @media (max-width:640px){
+    .entry{grid-template-columns:1fr;gap:6px;}
+    .hero-inner{flex-direction:column-reverse;align-items:flex-start;}
+    .skills-grid, .misc-grid{grid-template-columns:1fr;}
+    header.hero{padding:56px 0 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2" fill="currentColor"/><circle cx="2" cy="2" r="1.4" fill="currentColor"/><circle cx="12" cy="2" r="1.4" fill="currentColor"/><circle cx="2" cy="12" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><path d="M2 2L7 7M12 2L7 7M2 12L7 7M12 12L7 7" stroke="currentColor" stroke-width="0.8"/></svg>
+          Computational Science &amp; Applied Mathematics
+        </p>
+        <h1 class="name">Naheen Mohd.<br>Kadir</h1>
+        <p class="tagline">Researcher working across quantum cryptography, reservoir computing, and GPU-accelerated numerical methods — with a builder's background in shipping real software.</p>
+        <div class="contact-row">
+          <span>Dhaka, Bangladesh</span>
+          <span class="dot-sep">·</span>
+          <a href="mailto:naheen.kadir@gmail.com">naheen.kadir@gmail.com</a>
+          <span class="dot-sep">·</span>
+          <span>+880-1627833354</span>
+          <span class="dot-sep">·</span>
+          <a href="https://www.linkedin.com/in/naheen-mohd-kadir-211333153/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="dot-sep">·</span>
+          <a href="https://github.com/NMKadir" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="assets/naheen.jpg" alt="Portrait of Naheen Mohd. Kadir">
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#thesis">Thesis</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#more">More</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="education">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Education</h2></div>
+
+    <div class="entry">
+      <div class="entry-date">2025 — Running</div>
+      <div>
+        <p class="entry-title">M.Sc. in Applied Mathematics and Computational Science</p>
+        <p class="entry-org">North South University (NSU)</p>
+        <p class="entry-loc">Dhaka, Bangladesh</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2019 — 2025</div>
+      <div>
+        <p class="entry-title">B.Sc. in Computer Science and Engineering</p>
+        <p class="entry-org">Rajshahi University of Engineering and Technology (RUET)</p>
+        <p class="entry-loc">Rajshahi, Bangladesh</p>
+        <p class="entry-meta">CGPA 3.56 / 4.00</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">2017 — 2019</div>
+      <div>
+        <p class="entry-title">Higher Secondary Certificate (HSC)</p>
+        <p class="entry-org">Birshreshtha Noor Mohammad Public College</p>
+        <p class="entry-loc">Dhaka, Bangladesh</p>
+        <p class="entry-meta">GPA 5.00 / 5.00</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">— 2017</div>
+      <div>
+        <p class="entry-title">Secondary School Certificate (SSC)</p>
+        <p class="entry-org">Power Development Board Secondary High School</p>
+        <p class="entry-loc">Narayanganj, Bangladesh</p>
+        <p class="entry-meta">GPA 5.00 / 5.00</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Experience</h2></div>
+
+    <div class="entry">
+      <div class="entry-date">Jun 2026 — Present</div>
+      <div>
+        <p class="entry-title">Research Assistant</p>
+        <p class="entry-org">North South University (NSU)</p>
+        <p class="entry-loc">Dhaka, Bangladesh</p>
+        <p>Conducting research and supporting active project development under Dr. Md. Sumon Hossain.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Nov 2025 — May 2026</div>
+      <div>
+        <p class="entry-title">Guest Lecturer (Part-time)</p>
+        <p class="entry-org">Dept. of Computer Science and Engineering, Daffodil Institute of IT (DIIT)</p>
+        <p class="entry-loc">Dhaka, Bangladesh</p>
+        <p>Taught the Computer Graphics course at DIIT, an institute under the National University curriculum.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-date">Feb 2022 — Oct 2024</div>
+      <div>
+        <p class="entry-title">Co-Founder &amp; Chief Operating Officer</p>
+        <p class="entry-org">Niharon Technologies <span style="color:var(--muted);font-weight:400;">(closed)</span></p>
+        <p class="entry-loc">Dhaka, Bangladesh</p>
+        <p>Founded a startup building tech-based educational and utility mobile apps. Oversaw day-to-day operations, ensuring seamless execution of business strategy and scalability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="thesis">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Thesis</h2></div>
+    <div class="thesis-box">
+      <svg class="net" width="140" height="140" viewBox="0 0 140 140" fill="none">
+        <g stroke="#3454D1" stroke-width="1" opacity="0.35">
+          <line x1="20" y1="30" x2="70" y2="15"/><line x1="70" y1="15" x2="120" y2="40"/>
+          <line x1="20" y1="30" x2="55" y2="70"/><line x1="70" y1="15" x2="55" y2="70"/>
+          <line x1="120" y1="40" x2="90" y2="90"/><line x1="55" y1="70" x2="90" y2="90"/>
+          <line x1="55" y1="70" x2="25" y2="100"/><line x1="90" y1="90" x2="110" y2="120"/>
+        </g>
+        <g fill="#3454D1">
+          <circle cx="20" cy="30" r="3"/><circle cx="70" cy="15" r="3"/><circle cx="120" cy="40" r="3"/>
+          <circle cx="55" cy="70" r="4"/><circle cx="90" cy="90" r="3"/>
+          <circle cx="25" cy="100" r="2.5"/><circle cx="110" cy="120" r="2.5"/>
+        </g>
+      </svg>
+      <p class="thesis-title">A Hybrid Quantum-Chaos Theory Approach to Image Encryption Using Reservoir Computing</p>
+      <p>Quantum computers threaten RSA — this work pairs unbreakable E91 quantum key distribution with chaotic keys to encrypt images. A cipher generated via reservoir computing hides pixel data and resists decryption even if the QKD channel fails, securing against both quantum and classical attacks.</p>
+      <p class="thesis-link"><a href="https://arxiv.org/abs/2607.09923">View thesis →</a></p>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Research Publications</h2></div>
+
+    <div class="pub">
+      <span class="pub-tag">C</span><span class="pub-title">Simulation of E91 Quantum Key Distribution Protocol Using Qiskit</span>
+      <p class="pub-meta">1st Author · 2nd IEEE COMPAS-2025, Islamic University, Kushtia — Accepted &amp; Presented</p>
+    </div>
+    <div class="pub">
+      <span class="pub-tag">C</span><span class="pub-title">An Attention Guided Lightweight U-Net Framework for Colon Polyp Segmentation in Colonoscopy Images</span>
+      <p class="pub-meta">5th Author · 5th IEEE ICECTE-2026, RUET, Rajshahi — Accepted &amp; Presented</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Projects</h2></div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">AI</div>
+      <div class="proj">
+        <p class="proj-title">Brain Tumor Segmentation using U-Net Architecture</p>
+        <p>Academic project — built a pipeline for segmenting brain tumors from 3D MRI images using a U-Net.</p>
+        <p class="proj-tools">TensorFlow · Python</p>
+      </div>
+    </div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">Data Science &amp; ML</div>
+      <div class="proj">
+        <p class="proj-title"><a href="https://github.com/NMKadir/House-Prediction-EDA" target="_blank" rel="noopener" style="color:var(--ink);">EDA — House Prices: Advanced Regression Techniques</a></p>
+        <p>Exploratory analysis and preprocessing on a housing dataset: identified key price drivers, treated outliers, engineered features (log transforms, one-hot encoding) for predictive modeling.</p>
+        <p class="proj-tools">Python · Pandas · NumPy · Matplotlib · Seaborn · Scikit-learn</p>
+      </div>
+      <div class="proj">
+        <p class="proj-title">Student Dropout Prediction using Neural Networks</p>
+        <p>Predictive model for student dropout risk from academic and financial data — data cleaning, linear-regression imputation, feature scaling, and a deep neural network reaching 93% train / 92% test accuracy.</p>
+        <p class="proj-tools">Python · Pandas · Scikit-learn · TensorFlow · Matplotlib · Seaborn</p>
+      </div>
+    </div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">Computer Vision</div>
+      <div class="proj">
+        <p class="proj-title"><a href="https://github.com/NMKadir/Virtual-calculator" target="_blank" rel="noopener" style="color:var(--ink);">Hand Gesture-Controlled Virtual Calculator</a></p>
+        <p>Touchless calculator controlled via webcam hand-gesture recognition.</p>
+        <p class="proj-tools">Python · OpenCV</p>
+      </div>
+    </div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">HPC / MPI / CUDA</div>
+      <div class="proj">
+        <p class="proj-title"><a href="https://github.com/NMKadir/pyIterCUDA" target="_blank" rel="noopener" style="color:var(--ink);">Python Package for Iterative Solvers using CUDA C++</a> <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;">running</span></p>
+        <p>A Python package wrapping CUDA C++ iterative solvers to accelerate large-scale linear algebra via GPU parallelism.</p>
+        <p class="proj-tools">Python · CUDA C++ · pybind11 · CMake</p>
+      </div>
+      <div class="proj">
+        <p class="proj-title"><a href="https://github.com/NMKadir/CPU-GPU-Hybrid-3D-Solver" target="_blank" rel="noopener" style="color:var(--ink);">Heterogeneous CPU-GPU Hybrid 3D Poisson Solver (CGLS)</a> <span style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;">running</span></p>
+        <p>High-performance 3D Poisson equation solver in C++17 and CUDA using a matrix-free 7-point stencil and parallel GPU reductions to eliminate sparse matrix overhead — a 2.3× speedup on consumer hardware, plus an automated Python/VTK pipeline for profiling and 3D visualization.</p>
+        <p class="proj-tools">C++17 · CUDA · VTK · Python</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Technical Skills</h2></div>
+    <div class="skills-grid">
+      <div>
+        <p class="skill-cat">Languages</p>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">C++</span><span class="chip">C</span>
+          <span class="chip">CUDA C++</span><span class="chip">MPI</span><span class="chip">OpenMP</span>
+          <span class="chip">MySQL</span><span class="chip">8086 Assembly</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-cat">Tools &amp; Libraries</p>
+        <div class="chip-row">
+          <span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span>
+          <span class="chip">Scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">nmap</span><span class="chip">Wireshark</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-cat">Operating Systems</p>
+        <div class="chip-row">
+          <span class="chip">Linux (Ubuntu, Mint, Kali, Parrot, Debian)</span><span class="chip">Windows</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-cat">Network Simulation</p>
+        <div class="chip-row"><span class="chip">Cisco Packet Tracer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="more">
+    <div class="sec-head"><span class="sec-num">07</span><h2>More</h2></div>
+
+    <div class="misc-grid">
+      <div class="misc-item">
+        <strong>Competitive Programming</strong>
+        Codeforces — max rating 1364, 350+ problems solved. Handle: <a href="https://codeforces.com/profile/-_-XOR-_-" target="_blank" rel="noopener">XOR</a>
+      </div>
+      <div class="misc-item">
+        <strong>Participations</strong>
+        CodeSmash 2020 (36th place) · BDApps National Hackathon 2022 by Robi · RUET CSE Fest 2K22
+      </div>
+    </div>
+
+    <div class="misc-grid" style="margin-top:26px;">
+      <div class="misc-item">
+        <strong>Reference</strong>
+        Prof. Dr. Md. Ali Hossain — Professor (former Dept. Head), CSE, RUET<br>
+        <a href="mailto:ali.hossain@cse.ruet.ac.bd">ali.hossain@cse.ruet.ac.bd</a>
+      </div>
+      <div class="misc-item">
+        <strong>&nbsp;</strong>
+        Dr. Md. Sumon Hossain — Asst. Professor, Mathematics &amp; Physics, NSU<br>
+        <a href="mailto:sumon.hosssain@northsouth.edu">sumon.hosssain@northsouth.edu</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Naheen Mohd. Kadir · Dhaka, Bangladesh · Last updated August 2026
+</footer>
+
+</body>
+</html>
